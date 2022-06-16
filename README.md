@@ -1,9 +1,17 @@
 Pre-requistes:
-1. Amazon EKS Cluster is setup and running. Click here to learn how to create Amazon EKS cluster.
+1. Amazon EKS Cluster is setup and running. 
+Switch to Jenkins user
+sudo su - jenkins
+
+Create EKS Cluster with two worker nodes using eksctl
+eksctl create cluster --name demo-eks --region us-east-2 --nodegroup-name my-nodes --node-type t3.small --managed --nodes 2
+
+the above command should create a EKS cluster in AWS, it might take 15 to 20 mins. The eksctl tool uses CloudFormation under the hood, creating one stack for the EKS master control plane and another stack for the worker nodes. 
+
 2. Create ECR repo in AWS
-3. Jenkins Master is up and running
-4. Docker installed on Jenkins instance 
-5. Docker, Docker pipeline and Kubernetes CLI plug-ins are installed in Jenkins
+4. Jenkins Master is up and running
+5. Docker installed on Jenkins instance 
+6. Docker, Docker pipeline and Kubernetes CLI plug-ins are installed in Jenkins
 
 
 
