@@ -6,7 +6,7 @@ node {
 
   
      stage ('checkout') {
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '9ffd4ee4-3647-4a7d-a357-5e8746463282', url: 'https://bitbucket.org/ananthkannan/myawesomeangularapprepo/']]])       
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '919e66cf-e6e8-42c0-99da-b3b2b4c36c55', url: 'https://github.com/ponnamnagesh/CVdeploymicroservices']]])
         }
     
     
