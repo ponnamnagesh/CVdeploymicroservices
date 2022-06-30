@@ -1,17 +1,13 @@
 
 node {
-  
-  def image
-  def mvnHome = tool 'Maven3'
 
-  
      stage ('checkout') {
         checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '919e66cf-e6e8-42c0-99da-b3b2b4c36c55', url: 'https://github.com/ponnamnagesh/CVdeploymicroservices']]])
         }
     
     
     stage ('Build') {
-            sh 'mvn -f MyAwesomeApp/pom.xml clean install'            
+            sh ' sudo mvn -f MyAwesomeApp/pom.xml clean install'            
         }
         
     stage ('archive') {
